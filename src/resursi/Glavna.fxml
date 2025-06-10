@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <HBox prefHeight="143.0" prefWidth="818.0" style="-fx-background-color: #96f5f9;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="118.0" prefWidth="181.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="181.0">
+                     <children>
+                        <Label prefHeight="2.0" prefWidth="50.0" text="Polazište:" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="startpoinComboBox" prefWidth="150.0" style="-fx-background-color: #bdfcf4;" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="22.0" prefWidth="181.0">
+                     <children>
+                        <Label text="Odredište" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="182.0">
+                     <children>
+                        <ComboBox fx:id="destinationComboBox" prefHeight="17.0" prefWidth="150.0" style="-fx-background-color: #bdfcf4;" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="143.0" prefWidth="164.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="164.0">
+                     <children>
+                        <Label text="Kriterijum:" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="117.0" prefWidth="164.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <RadioButton fx:id="timeRadioButton" mnemonicParsing="false" text="Vrijeme " />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <RadioButton fx:id="priceRadioButton" mnemonicParsing="false" text="Cijena" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="18.0" prefWidth="132.0">
+                                 <children>
+                                    <RadioButton fx:id="transfersRadioButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="135.0" text="Presjedanja" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="findRoutesButton" mnemonicParsing="false" style="-fx-background-color: #4b648d;" text="Pretraga ruta" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="118.0" prefWidth="473.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="22.0" prefWidth="474.0">
+                     <children>
+                        <Label text="Najoptimalnija ruta:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="474.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Putanja:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Vrijeme trajanja:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Cijena:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Presjedanja:" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="18.0" prefWidth="474.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="pathLabel" prefHeight="18.0" prefWidth="125.0" style="-fx-background-color: bdfcf4;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="timeLabel" prefHeight="18.0" prefWidth="122.0" style="-fx-background-color: bdfcf4;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="priceLabel" prefHeight="18.0" prefWidth="202.0" style="-fx-background-color: bdfcf4;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="transfersLabel" prefHeight="18.0" prefWidth="193.0" style="-fx-background-color: bdfcf4;">
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="474.0">
+                     <children>
+                        <Button fx:id="buyTicketButton" mnemonicParsing="false" style="-fx-background-color: #4b648d;" text="Kupi kartu" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <Canvas fx:id="canvas" height="437.0" width="821.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <HBox alignment="CENTER" prefHeight="39.0" prefWidth="818.0" style="-fx-background-color: #96f5f9;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Prikaz najbolje rute:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
