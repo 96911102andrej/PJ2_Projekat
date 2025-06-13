@@ -6,12 +6,13 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontroleri.GlavnaKontroler">
    <bottom>
       <HBox prefHeight="143.0" prefWidth="818.0" style="-fx-background-color: #96f5f9;" BorderPane.alignment="CENTER">
          <children>
@@ -30,7 +31,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="startpoinComboBox" prefWidth="150.0" style="-fx-background-color: #bdfcf4;" />
+                        <ComboBox fx:id="startPointComboBox" prefWidth="150.0" style="-fx-background-color: #bdfcf4;" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="22.0" prefWidth="181.0">
@@ -49,7 +50,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="25.0" prefWidth="164.0">
                      <children>
-                        <Label text="Kriterijum:" />
+                        <Label text="Kriterij:" />
                      </children>
                      <VBox.margin>
                         <Insets top="5.0" />
@@ -61,7 +62,7 @@
                            <children>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <RadioButton fx:id="timeRadioButton" mnemonicParsing="false" text="Vrijeme " />
+                                    <RadioButton fx:id="timeRadioButton" mnemonicParsing="false" text="Vrijeme" />
                                  </children>
                               </HBox>
                               <HBox prefHeight="100.0" prefWidth="200.0">
@@ -127,7 +128,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label fx:id="pathLabel" prefHeight="18.0" prefWidth="125.0" style="-fx-background-color: bdfcf4;">
+                              <Label fx:id="pathLabel" prefHeight="18.0" prefWidth="125.0" style="-fx-background-color: #bdfcf4;">
                                  <VBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </VBox.margin>
@@ -136,7 +137,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label fx:id="timeLabel" prefHeight="18.0" prefWidth="122.0" style="-fx-background-color: bdfcf4;">
+                              <Label fx:id="timeLabel" prefHeight="18.0" prefWidth="122.0" style="-fx-background-color: #bdfcf4;">
                                  <VBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </VBox.margin>
@@ -145,7 +146,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label fx:id="priceLabel" prefHeight="18.0" prefWidth="202.0" style="-fx-background-color: bdfcf4;">
+                              <Label fx:id="priceLabel" prefHeight="18.0" prefWidth="202.0" style="-fx-background-color: #bdfcf4;">
                                  <VBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </VBox.margin>
@@ -154,7 +155,7 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label fx:id="transfersLabel" prefHeight="18.0" prefWidth="193.0" style="-fx-background-color: bdfcf4;">
+                              <Label fx:id="transfersLabel" prefHeight="18.0" prefWidth="193.0" style="-fx-background-color: #bdfcf4;">
                                  <VBox.margin>
                                     <Insets left="5.0" right="5.0" />
                                  </VBox.margin>
@@ -165,7 +166,14 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="46.0" prefWidth="474.0">
                      <children>
-                        <Button fx:id="buyTicketButton" mnemonicParsing="false" style="-fx-background-color: #4b648d;" text="Kupi kartu" textFill="WHITE" />
+                        <Button fx:id="buyTicketButton" mnemonicParsing="false" style="-fx-background-color: #4b648d;" text="Kupovina karte" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></Button>
+                        <Button fx:id="showTopRoutesButton" mnemonicParsing="false" style="-fx-background-color: #4b648d;" text="Prikaz dodatnih ruta" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin></Button>
                      </children>
                   </HBox>
                </children>
@@ -174,7 +182,11 @@
       </HBox>
    </bottom>
    <right>
-      <Canvas fx:id="canvas" height="437.0" width="821.0" BorderPane.alignment="CENTER" />
+      <ScrollPane BorderPane.alignment="CENTER">
+         <content>
+            <Canvas fx:id="graphCanvas" />
+         </content>
+      </ScrollPane>
    </right>
    <top>
       <HBox alignment="CENTER" prefHeight="39.0" prefWidth="818.0" style="-fx-background-color: #96f5f9;" BorderPane.alignment="CENTER">

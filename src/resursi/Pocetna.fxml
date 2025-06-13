@@ -4,145 +4,32 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="429.0" prefWidth="366.0" spacing="20.0" style="-fx-background-color: #bdfcf4;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontroleri.PocetnaKontroler">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #96f5f9;">
-         <top>
-            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label text="Unesite dimenzije matrice">
-                     <font>
-                        <Font size="17.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-         </top>
-         <center>
-            <VBox prefHeight="208.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="166.0">
-                           <children>
-                              <Label prefHeight="22.0" prefWidth="169.0" text="Unesite broj redova (n):">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="133.0">
-                           <children>
-                              <TextField fx:id="rowField" style="-fx-background-color: #bdfcf4;" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="71.0" prefWidth="166.0">
-                           <children>
-                              <Label text="Unesite broj kolona (m):">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="71.0" prefWidth="133.0">
-                           <children>
-                              <TextField fx:id="colField" style="-fx-background-color: #bdfcf4;" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="85.0" prefWidth="600.0">
-                     <children>
-                        <Button fx:id="generateButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #4b648d;" text="Generiši" textFill="#fffcfc">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </center>
-         <bottom>
-            <VBox prefHeight="80.0" prefWidth="447.0" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox alignment="TOP_CENTER" prefHeight="66.0" prefWidth="600.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="27.0" prefWidth="203.0">
-                           <children>
-                              <Label prefHeight="22.0" prefWidth="214.0" text="Ukupan broj prodatih karata:">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="27.0" prefWidth="122.0">
-                           <children>
-                              <Label fx:id="totalTicketsSoldLabel" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: #bdfcf4;">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="10.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="TOP_CENTER" prefHeight="66.0" prefWidth="600.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="27.0" prefWidth="112.0">
-                           <children>
-                              <Label text="Ukupan prihod:">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label fx:id="totalEarningsLabel" prefHeight="22.0" prefWidth="123.0" style="-fx-background-color: #bdfcf4;">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="KM.">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="5.0" />
-                                 </VBox.margin>
-                              </Label>
-                           </children>
-                        </VBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin>
-                  </HBox>
-               </children>
-            </VBox>
-         </bottom>
-      </BorderPane>
+      <Label text="Generisanje Transportnih Podataka">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label text="Unesite dimenzije matrice:" />
+      <VBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Label text="Broj redova:" />
+            <TextField fx:id="rowField" prefHeight="25.0" prefWidth="318.0" />
+            <Label text="Broj kolona:" />
+            <TextField fx:id="colField" prefWidth="100.0" />
+         </children>
+      </VBox>
+      <Button fx:id="generateButton" mnemonicParsing="false" onAction="#generateAndProceed" style="-fx-background-color: #4b648d;" text="Generiši" textFill="WHITE" />
+      <Label text="Ukupno prodatih karata:" />
+      <Label fx:id="totalTicketsSoldLabel" style="-fx-background-color: #bdfcf4;" />
+      <Label text="Ukupna zarada:" />
+      <Label fx:id="totalEarningsLabel" style="-fx-background-color: #bdfcf4;" />
    </children>
-</AnchorPane>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

@@ -15,6 +15,23 @@ public class TransportDataGenerator {
         this.m = m;
     }
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Unesite broj redova (n): ");
+        int rows = scanner.nextInt();
+
+        System.out.println("Unesite broj kolona (m): ");
+        int cols = scanner.nextInt();
+
+        TransportDataGenerator generator = new TransportDataGenerator(rows, cols);
+        TransportData data = generator.generateData();
+        generator.saveToJson(data, "transport_data.json");
+
+        System.out.println("Podaci za matricu " + rows + "x" + cols + " su generisani i sačuvani kao transport_data.json");
+    }
+
+
     public static class TransportData {
         public String[][] countryMap;
         public List<Station> stations;
@@ -71,6 +88,7 @@ public class TransportDataGenerator {
 
     private List<Departure> generateDepartures(List<Station> stations) {
         List<Departure> departures = new ArrayList<>();
+
         for (Station station : stations) {
             int x = Integer.parseInt(station.city.split("_")[1]);
             int y = Integer.parseInt(station.city.split("_")[2]);
@@ -87,14 +105,18 @@ public class TransportDataGenerator {
         Departure departure = new Departure();
         departure.type = type;
         departure.from = from;
+
         List<String> neighbors = getNeighbors(x, y);
         departure.to = neighbors.isEmpty() ? from : neighbors.get(random.nextInt(neighbors.size()));
+
         int hour = random.nextInt(24);
         int minute = random.nextInt(4) * 15;
         departure.departureTime = String.format("%02d:%02d", hour, minute);
+
         departure.duration = 30 + random.nextInt(151); // 30–180 min
         departure.price = 100 + random.nextInt(901);   // 100–1000 KM
         departure.minTransferTime = 5 + random.nextInt(26); // 5–30 min
+
         return departure;
     }
 
@@ -112,7 +134,7 @@ public class TransportDataGenerator {
         return neighbors;
     }
 
-    private void saveToJson(TransportData data, String filename) {
+    public void saveToJson(TransportData data, String filename) {
         try (FileWriter file = new FileWriter(filename)) {
             StringBuilder json = new StringBuilder();
             json.append("{\n");

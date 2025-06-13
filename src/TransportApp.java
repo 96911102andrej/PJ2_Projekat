@@ -3,31 +3,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.image.Image;
 
-
-
+import java.io.IOException;
 
 public class TransportApp extends Application {
 
-    public static void main (String[] args) {
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resursi/Pocetna.fxml"));
+        Parent root = loader.load();
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setTitle("Transport App");
+        primaryStage.setResizable(true); // Allow window resizing
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
         launch(args);
     }
-
-    @Override
-    public void start(Stage primaryStage){
-        try{
-            Parent root = FXMLLoader.load(getClass().getResource("/resursi/Pocetna.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-            primaryStage.setTitle("Početna");
-            Image icon = new Image("auto.png");
-            primaryStage.getIcons().add(icon);
-            primaryStage.setResizable(false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 }

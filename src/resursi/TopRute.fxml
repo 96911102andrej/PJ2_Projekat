@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
-
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: #96f5f9;" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Top 5 ruta">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-   </top>
-   <center>
-      <TableView fx:id="routesTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn prefWidth="285.5999755859375" style="-fx-background-color: transparent;" text="Putanja" />
-          <TableColumn minWidth="8.0" prefWidth="103.99993896484375" text="Vrijeme" />
-            <TableColumn minWidth="0.0" prefWidth="103.20001220703125" text="Cijena" />
-            <TableColumn prefWidth="111.199951171875" text="Presjedanja" />
-        </columns>
-      </TableView>
-   </center>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<BorderPane fx:controller="kontroleri.TopRuteKontroler"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <TableView fx:id="routeTable">
+            <columns>
+                <TableColumn fx:id="pathColumn" text="Path" prefWidth="200"/>
+                <TableColumn fx:id="timeColumn" text="Time (min)" prefWidth="100"/>
+                <TableColumn fx:id="costColumn" text="Cost (KM)" prefWidth="100"/>
+                <TableColumn fx:id="transfersColumn" text="Transfers" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
 </BorderPane>

@@ -21,6 +21,8 @@ public class RouteFinder {
         private final int transfers;
         private final List<Double> waitingTimes;
 
+
+
         Route(List<Graph.Connection> connections, double totalCost, long totalTime, int transfers, List<Double> waitingTimes) {
             this.connections = new ArrayList<>(connections);
             this.totalCost = totalCost;
@@ -48,6 +50,23 @@ public class RouteFinder {
         public List<Double> getWaitingTimes() {
             return Collections.unmodifiableList(waitingTimes);
         }
+
+        public String getPath() {
+            StringBuilder path = new StringBuilder();
+            if (!connections.isEmpty()) {
+                path.append(connections.get(0).getSource().getCityId());
+                for (Graph.Connection conn : connections) {
+                    String from = conn.getSource().getCityId();
+                    String to = conn.getDestination().getCityId();
+                    if (from.equals(to) && conn.isTransfer()) {
+                        path.append(" [transfer] -> ").append(to);
+                    } else {
+                        path.append(" -> ").append(to);
+                    }
+                }
+            }
+            return path.toString();
+        }
     }
 
     /**
@@ -61,6 +80,7 @@ public class RouteFinder {
         List<Graph.Connection> path;
         List<Double> waitingTimes;
         Station lastTransportStation; // Last station where we boarded a transport
+
 
         State(Station station, double weight, LocalTime currentTime, int transfers,
               List<Graph.Connection> path, List<Double> waitingTimes, Station lastTransportStation) {
@@ -242,7 +262,7 @@ public class RouteFinder {
                 List<Graph.Connection> newPath = new ArrayList<>(currentPath);
                 newPath.add(conn);
                 List<Double> newWaitingTimes = new ArrayList<>(currentWaitingTimes);
-                newWaitingTimes.add(0.0);
+                newWaitingTimes.add((double) conn.getTravelTime());
                 State newState = new State(nextStation, newTransfers, LocalTime.of(0, 0), newTransfers, newPath, newWaitingTimes, newLastTransportStation);
                 stationStates.add(newState);
                 queue.add(newState);
@@ -276,4 +296,5 @@ public class RouteFinder {
         }
         return waiting + minWaitingTime;
     }
+
 }
