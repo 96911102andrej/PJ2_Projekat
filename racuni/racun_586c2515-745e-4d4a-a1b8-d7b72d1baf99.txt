@@ -1,0 +1,10 @@
+Račun ID: 586c2515-745e-4d4a-a1b8-d7b72d1baf99
+Datum: 2025-06-13
+Ruta:
+Prevoz: A_1_0 -> A_1_1 (08:45 to 09:50, 452,00 KM, 65 min)
+Prevoz: A_1_1 -> A_1_2 (15:45 to 16:39, 647,00 KM, 54 min)
+Prevoz: A_1_2 -> A_1_3 (20:45 to 23:25, 648,00 KM, 160 min)
+Prevoz: A_1_3 -> A_1_4 (01:00 to 02:56, 949,00 KM, 116 min)
+Cijena: 2696,00 KM
+Trajanje: 1200 min
+Presjedanja: 3

@@ -337,7 +337,7 @@ public class GlavnaKontroler {
             System.err.println("Error updating earnings in PocetnaKontroler: " + e.getMessage());
         }
 
-        showAlert("Success", "Receipt generated and saved in 'racuni' folder.");
+        showAlert("Uspješno", "Karta je kupljena, a račun je sačuvan u folderu 'racuni'.");
     }
 
     private List<RouteFinder.Route> findAllRoutes(Station[] sourceStations, Station[] destStations,
